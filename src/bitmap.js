@@ -135,7 +135,14 @@ class Bitmap {
         var i = this.calculateIndex(x,y);
         return this.data.slice(i,i+4);
     }
-
+    getPixelRGBA_separate_i(x,y) {
+        var i = this.calculateIndex(x,y);
+        var r = this.data[i+0];
+        var g = this.data[i+1];
+        var b = this.data[i+2];
+        var a = this.data[i+3];
+        return [r, g, b, a];
+    }
     /**
      * Get Context
      * Get a new {@link Context} object for the current bitmap object
